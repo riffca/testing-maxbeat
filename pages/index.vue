@@ -1,8 +1,8 @@
-<template></template>
+<template>
+  <div />
+</template>
 <script lang="ts" setup>
 definePageMeta({
-  middleware: [
-    'redirect-cocktails'
-  ],
+  middleware: ["redirect-cocktails"],
 });
 </script>
