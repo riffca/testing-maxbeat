@@ -24,11 +24,13 @@
         loading="lazy"
         :src="drink.strDrinkThumb"
         :alt="drink.strDrink"
-        class="w-36 h-36 object-cover rounded-full mb-4 border-2 border-gray-200"
+        class="w-36 h-36 inline-block object-cover rounded-full mb-4 border-2 border-gray-200"
       />
     </div>
 
-    <h4 class="text-left text-lg font-semibold text-gray-700 mb-2">Ingredients:</h4>
+    <h4 class="text-left text-lg font-semibold text-gray-700 mb-2">
+      Ingredients:
+    </h4>
     <ul class="list-disc list-inside text-left w-full px-4 mb-4">
       <li
         v-for="(item, index) in getIngredientsAndMeasures(drink)"
