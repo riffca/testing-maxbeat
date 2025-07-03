@@ -27,7 +27,9 @@
       />
     </div>
 
-    <h4 class="text-left text-lg font-semibold text-gray-700 mb-2">Ingredients:</h4>
+    <h4 class="text-left text-lg font-semibold text-gray-700 mb-2">
+      Ingredients:
+    </h4>
 
     <ul class="list-disc list-inside text-left w-full px-4 mb-4">
       <li

@@ -1,5 +1,10 @@
 <template>
-  <img ref="imgRef" :data-src="src" :alt="alt" :class="{ 'lazy-loaded': loaded }" />
+  <img
+    ref="imgRef"
+    :data-src="src"
+    :alt="alt"
+    :class="{ 'lazy-loaded': loaded }"
+  />
 </template>
 
 <script lang="ts" setup>

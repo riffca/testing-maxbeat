@@ -117,7 +117,9 @@ function createAdaptiveFactory({
     let [mobile, tablet, desktop] = value.split(",").map(Number);
 
     const mobileSize = getVwFromPixel(mobile);
-    const tabletSize = tablet ? getRemFromPixel(tablet) : getRemFromPixel(mobile);
+    const tabletSize = tablet
+      ? getRemFromPixel(tablet)
+      : getRemFromPixel(mobile);
     const desktopSize = desktop ? getRemFromPixel(desktop) : tabletSize;
 
     const tabletMedia = createMQString({

@@ -40,15 +40,18 @@ module.exports = {
         const currentStyles = styles[key];
 
         matchUtilities({
-          [key + "-rem"]: (value) => adaptSimple.createRemSize(value, currentStyles),
+          [key + "-rem"]: (value) =>
+            adaptSimple.createRemSize(value, currentStyles),
         });
 
         matchUtilities({
-          [key + "-mob"]: (value) => adaptSimple.createVwSize(value, currentStyles),
+          [key + "-mob"]: (value) =>
+            adaptSimple.createVwSize(value, currentStyles),
         });
 
         matchUtilities({
-          [key + "-adapt"]: (value) => adaptSimple.createAdaptHandler(value, currentStyles),
+          [key + "-adapt"]: (value) =>
+            adaptSimple.createAdaptHandler(value, currentStyles),
         });
       });
     }),
