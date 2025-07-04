@@ -1,10 +1,10 @@
 <template>
-  <div class="grid grid-rows-1 grid-cols-[1fr_2fr]">
-    <cocktails-list :root-page="isRootPage" :items="cocktails" />
-    <div>
+  <NuxtLayout name="cocktails">
+    <div class="min-h-full tablet:grid grid-rows-1 grid-cols-[1fr_2fr]">
+      <cocktails-list-menu :items="cocktails" />
       <NuxtPage :current-drinks :pending />
     </div>
-  </div>
+  </NuxtLayout>
 </template>
 <script lang="ts" setup>
 const route = useRoute();
@@ -22,7 +22,9 @@ const cocktails = computed(() =>
 const { getCocktails, cockTailsMap } = useCocktails();
 
 const currentCocktailData = computed(() => {
-  return currentType.value ? cockTailsMap.value[currentType.value as CocktailTypes] : null;
+  return currentType.value
+    ? cockTailsMap.value[currentType.value as CocktailTypes]
+    : null;
 });
 
 const currentDrinks = computed(() => currentCocktailData.value?.drinks);
@@ -40,7 +42,16 @@ const { pending } = await useAsyncData(
   {
     watch: [currentType],
     immediate: true,
-    default: () => cockTailsMap.value[currentType.value as CocktailTypes] || null,
+    default: () =>
+      cockTailsMap.value[currentType.value as CocktailTypes] || null,
   },
 );
+
+useHead({
+  title: "Cocktails",
+});
+
+definePageMeta({
+  middleware: ["redirect-cocktails-not-exists"],
+});
 </script>

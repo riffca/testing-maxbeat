@@ -1,35 +1,31 @@
 <template>
-  <div class="max-w-md mx-auto p-4">
-    <ul class="space-y-3">
+  <div class="w-full">
+    <ui-flex-col
+      class="gap-adapt-[12] py-adapt-[16,20] px-adapt-[0,20] sticky top-0"
+    >
       <NuxtLink
         v-for="(item, index) in items"
         :key="index"
-        :to="`${rootPage ? 'cocktails/' : ''}${item.title}`"
+        :to="item.title"
         :class="{
           'bg-gray-50': !item.selected,
           'bg-gray-200 font-bold': item.selected,
         }"
-        class="group flex items-center justify-between p-3 rounded-lg hover:bg-gray-200 transition-colors"
+        class="group flex max-tablet:justify-center p-adapt-[16,24] rounded-lg hover:bg-gray-200 transition-colors"
       >
         <div
-          class="text-blue-600 first-letter:uppercase group-hover:text-blue-800 truncate"
-          rel="noopener noreferrer"
-          @click="emit('click-item', item)"
+          class="text-blue-600 text-adapt-[18,16] first-letter:uppercase group-hover:text-blue-800 truncate"
         >
           {{ item.title }}
         </div>
       </NuxtLink>
-    </ul>
+    </ui-flex-col>
 
     <p v-if="!items.length" class="text-gray-500 text-center py-4">No items</p>
   </div>
 </template>
 
 <script setup lang="ts">
-const emit = defineEmits<{
-  "click-item": [value: ListItem];
-}>();
-
 type ListItem = {
   selected: boolean;
   url: string;
@@ -38,6 +34,5 @@ type ListItem = {
 
 defineProps<{
   items: ListItem[];
-  rootPage: boolean;
 }>();
 </script>
