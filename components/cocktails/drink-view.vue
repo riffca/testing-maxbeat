@@ -7,15 +7,16 @@
         </h3>
         <ui-flex-col class="max-tablet:h-full max-tablet:justify-center">
           <p class="text-gray-700">
-            <strong class="font-medium text-adapt-[12,16]">Category:</strong>
+            <strong class="font-medium text-rem-[16] max-tablet:hidden">Category:</strong>
             {{ drink.strCategory }}
           </p>
           <p class="text-gray-700">
-            <strong class="font-medium text-adapt-[12,16]">Alcoholic:</strong>
+            <strong class="font-medium text-rem-[16] max-tablet:hidden">Alcoholic:</strong>
             {{ drink.strAlcoholic }}
           </p>
           <p class="text-gray-700 mb-4">
-            <strong class="font-medium text-adapt-[12,16]">Glass:</strong> {{ drink.strGlass }}
+            <strong class="font-medium text-rem-[16] max-tablet:hidden">Glass:</strong>
+            {{ drink.strGlass }}
           </p>
         </ui-flex-col>
       </ui-flex-col>
