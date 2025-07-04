@@ -7,15 +7,15 @@
         </h3>
         <ui-flex-col class="max-tablet:h-full max-tablet:justify-center">
           <p class="text-gray-700">
-            <strong class="font-medium">Category:</strong>
+            <strong class="font-medium text-adapt-[12,16]">Category:</strong>
             {{ drink.strCategory }}
           </p>
           <p class="text-gray-700">
-            <strong class="font-medium">Alcoholic:</strong>
+            <strong class="font-medium text-adapt-[12,16]">Alcoholic:</strong>
             {{ drink.strAlcoholic }}
           </p>
           <p class="text-gray-700 mb-4">
-            <strong class="font-medium">Glass:</strong> {{ drink.strGlass }}
+            <strong class="font-medium text-adapt-[12,16]">Glass:</strong> {{ drink.strGlass }}
           </p>
         </ui-flex-col>
       </ui-flex-col>
@@ -29,13 +29,9 @@
     <cocktails-drink-view-instructions :instructions="drink.strInstructions" />
 
     <ui-flex-col class="gap-adapt-[8,16]">
-      <h4 class="text-left text-adapt-[12,18] font-semibold text-gray-700 mb-2">
-        Ingredients:
-      </h4>
+      <h4 class="text-left text-adapt-[16,18] font-semibold text-gray-700 mb-2">Ingredients:</h4>
 
-      <ul
-        class="flex flex-col list-disc list-inside text-left w-full px-adapt-[16]"
-      >
+      <ul class="flex flex-col list-disc list-inside text-left w-full px-adapt-[16]">
         <li
           v-for="(item, index) in getIngredientsAndMeasures(drink)"
           :key="index"
