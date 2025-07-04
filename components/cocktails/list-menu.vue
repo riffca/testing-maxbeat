@@ -1,8 +1,6 @@
 <template>
   <div class="w-full">
-    <ui-flex-col
-      class="gap-adapt-[12] py-adapt-[16,20] px-adapt-[0,20] sticky top-0"
-    >
+    <ui-flex-col class="gap-adapt-[12] py-adapt-[16,20] px-adapt-[0,20] sticky top-0">
       <NuxtLink
         v-for="(item, index) in items"
         :key="index"

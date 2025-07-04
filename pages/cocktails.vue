@@ -27,7 +27,7 @@ const currentCocktailData = computed(() => {
 
 const currentDrinks = computed(() => currentCocktailData.value?.drinks || []);
 
-const { pending } = await useAsyncData(
+const { pending } = useAsyncData(
   () => `cocktails-${currentType.value}`,
   async () => {
     return await getCocktails(currentType.value as CocktailTypes);

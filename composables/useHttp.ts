@@ -57,7 +57,6 @@ export const useHttp = () => {
     patch: <T = unknown, R = unknown>(endpoint: string, body: R) =>
       request<T, R>(endpoint, { method: "PATCH", body }),
 
-    delete: <T = unknown>(endpoint: string) =>
-      request<T>(endpoint, { method: "DELETE" }),
+    delete: <T = unknown>(endpoint: string) => request<T>(endpoint, { method: "DELETE" }),
   };
 };
